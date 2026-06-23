@@ -18,6 +18,7 @@
       "bundleIdentifier": "com.luxin.aiassistant"
     },
     "android": {
+      "package": "com.luxin.aiassistant",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#212121"
