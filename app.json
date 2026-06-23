@@ -26,9 +26,7 @@
     "web": {
       "favicon": "./assets/images/icon.png"
     },
-    "plugins": [
-      "expo-font"
-    ],
+    "plugins": [],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
