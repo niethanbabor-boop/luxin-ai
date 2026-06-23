@@ -5,22 +5,18 @@ import {
   Inter_700Bold,
   useFonts,
 } from "@expo-google-fonts/inter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { useColorScheme } from "react-native";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LlamaProvider } from "@/contexts/LlamaContext";
 import { ChatProvider } from "@/contexts/ChatContext";
 
 SplashScreen.preventAutoHideAsync();
-
-const queryClient = new QueryClient();
 
 function RootLayoutNav() {
   return (
@@ -49,17 +45,15 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <ErrorBoundary>
-        <QueryClientProvider client={queryClient}>
-          <LlamaProvider>
-            <ChatProvider>
-              <GestureHandlerRootView style={{ flex: 1 }}>
-                <KeyboardProvider>
-                  <RootLayoutNav />
-                </KeyboardProvider>
-              </GestureHandlerRootView>
-            </ChatProvider>
-          </LlamaProvider>
-        </QueryClientProvider>
+        <LlamaProvider>
+          <ChatProvider>
+            <GestureHandlerRootView style={{ flex: 1 }}>
+              <KeyboardProvider>
+                <RootLayoutNav />
+              </KeyboardProvider>
+            </GestureHandlerRootView>
+          </ChatProvider>
+        </LlamaProvider>
       </ErrorBoundary>
     </SafeAreaProvider>
   );
