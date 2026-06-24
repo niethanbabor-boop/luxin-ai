@@ -28,6 +28,11 @@
       "favicon": "./assets/images/icon.png"
     },
     "plugins": [],
+    "extra": {
+      "eas": {
+        "projectId": "056a3bea-3718-49e1-90a0-acb03a7a17bb"
+      }
+    },
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
